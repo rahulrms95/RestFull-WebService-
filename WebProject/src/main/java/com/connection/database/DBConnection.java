@@ -19,7 +19,7 @@ public class DBConnection {
 				if(con == null)
 				{
 					try {
-						Class.forName("com.mysql.jdbc.Driver");
+						Class.forName("com.mysql.cj.jdbc.Driver");
 						con = DriverManager.getConnection(url,user,password);
 						//Statement stm = con.createStatement();
 						//stm.execute("create table users (name varchar(50),age int, userid varchar(50) primary key);");

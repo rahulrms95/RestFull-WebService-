@@ -21,7 +21,28 @@ public class DBOperation implements Operations<User,User>{
 	@Override
 	public User update(User value) {
 		// TODO Auto-generated method stub
-		return null;
+		User row = null ;
+		Statement st = null;
+		try {
+			st = con.createStatement();
+			String update ="update users set name='"+value.getName()+"',age="+value.getAge()+" where userid ='"+value.getUserid()+"';";
+			System.out.println(update);
+			int result = st.executeUpdate(update);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			try {
+				st.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return row;
 	}
 
 	@Override
@@ -32,8 +53,30 @@ public class DBOperation implements Operations<User,User>{
 
 	@Override
 	public User delete(User value) {
+
 		// TODO Auto-generated method stub
+		User row = null ;
+		Statement st = null;
+		try {
+			st = con.createStatement();
+			boolean result = st.execute("delete from users where userid='"+value.getUserid()+"'");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			try {
+				st.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		return null;
+	
 	}
 
 	
@@ -93,7 +136,7 @@ public class DBOperation implements Operations<User,User>{
 
 	@Override
 	public List<User> findAll(User value) {
-		// TODO Auto-generated method stub
+
 		List<User> resultlst = new ArrayList<>();
 		try {
 			Statement st = con.createStatement();
@@ -110,8 +153,35 @@ public class DBOperation implements Operations<User,User>{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return resultlst;
+	}
+
+	@Override
+	public User add(User value) {
+		// TODO Auto-generated method stub
+		User row = null ;
+		Statement st = null;
+		try {
+			st = con.createStatement();
+			String insert ="insert into users values ('"+value.getName()
+			+"',"+value.getAge()+",'"+value.getUserid()+"');";
+			System.out.println(insert);
+			 int result = st.executeUpdate(insert);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			try {
+				st.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return row;
 	}
 	
 }

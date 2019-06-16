@@ -3,7 +3,10 @@ package com.rest.handler;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -36,4 +39,41 @@ public class UserHandler {
 		return op.find(user);
 	}
 	
+	@DELETE	
+	@Path("/deleteData")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public User deleteData(User user)
+	{
+		return op.delete(user);
+	}
+	
+	@POST
+	@Path("/addData")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public User postData(User user)
+	{
+		return op.add(user);
+	}
+	
+	@PUT
+	@Path("/updateData")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public User updateData(User user)
+	{
+		return op.update(user);
+	}
+	public static void main(String[] args) {
+		
+		User us = new User();
+		us.setUserid("1353");
+		us.setAge(22);
+		us.setName("rajesh");
+		//new UserHandler().deleteData(us);
+		//new UserHandler().postData(us);
+		new UserHandler().updateData(us);
+		
+	}
 }

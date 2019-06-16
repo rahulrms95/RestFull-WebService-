@@ -11,10 +11,7 @@ public interface Operations<K,V> {
 	{
 		return null;
 	}
-	static void meth1()
-	{
-		
-	}
+	public V add(K value);
 	
 	public List<V> findAll(K value);
 	
