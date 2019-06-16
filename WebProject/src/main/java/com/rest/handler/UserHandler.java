@@ -68,12 +68,12 @@ public class UserHandler {
 	public static void main(String[] args) {
 		
 		User us = new User();
-		us.setUserid("1353");
-		us.setAge(22);
-		us.setName("rajesh");
+		us.setUserid("562");
+		us.setAge(20);
+		us.setName("ram");
 		//new UserHandler().deleteData(us);
-		//new UserHandler().postData(us);
-		new UserHandler().updateData(us);
+		new UserHandler().postData(us);
+		//new UserHandler().updateData(us);
 		
 	}
 }

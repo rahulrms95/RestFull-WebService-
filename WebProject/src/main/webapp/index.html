@@ -6,498 +6,55 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COMMAND & CONTROL</title>
-<link rel="icon" href="./resources/images/logo1.png" />
-<link rel="stylesheet"
-	href="resources/thirdParty/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="resources/css/app.css" />
-
-<!--
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
--->
-<script
-	src="resources/thirdParty/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="resources/thirdParty/scripts/sweetalert/sweetalert.min.js"></script>
-
-<style>
-.swal-modal {
-	width: 390px !important;
-}
-</style>
-
+<title>Web Project</title>
 
 </head>
 
 <body>
-	<div id="headerlogin" style="height: 90% !important">
-		<div class="container-fluid">
 
-			<div class="row" style="text-align: right;">
+<b>Hi this simple Web page Web Project</b><br>
+<a href="http://127.0.0.1:8080/WebProject/rest/handler/getAllData" > Click to Get Data </a>
+<form action="WebProject/rest/handler/getAllData" method="get">
+<button type="submit" value="GetData" onClick="getData()">Get</button>
+</form>
 
-				<div class="col-sm-4 col-md-4">
-					<a class="navbar-brand" href="#"> <img
-						src="resources/images/login/logo.jpg" class="img-responsive"
-						width="60" height="60" />
-					</a>
-				</div>
-				<div class="col-sm-8 col-md-8">
-					</br>
-					<p>
-						<a href="#"> For updates Follow us on VNL website.</a>
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<!-- Contains bullet points and login form -->
-		<div class="jumbotron"
-			style="background: url(resources/images/login/b6.jpg) no-repeat; background-size: cover; width: 100%; height: 67%; position: relative; top: 0; left: 0; color: white;">
-			<div class="container text-center">
-				<div class="row">
-					<div class="col-sm-8 text-left">
-						<h2 style="font-weight: bold">Command & Control</h2>
-						<hr>
-						<p>
-						<h5>
-							<ul>
-								<li>Revolutionized surveillance system</li>
-								</br>
-								<li>Real Time Notifications</li>
-								</br>
-								<li>Bird's Eye View</li>
-								</br>
-								<li>Easy Monitoring Options</li>
-								</br>
-
-
-							</ul>
-						</h5>
-						</p>
-
-						<!--  <h3>Test</h3>
-      <p>Lorem ipsum...</p> -->
-
-						</br>
-						<div></div>
-					</div>
-					<div class="col-sm-4 text-left">
-
-						<form id="form" autocomplete="off">
-							<div id="login-form" class="form-container" data-form-container
-								style="border-radius: 7px;">
-								<div class="row">
-									<div class="form-title">
-										<span>Login</span>
-									</div>
-								</div>
-
-								<div class="input-container">
-									<div class="row">
-										<span class="req-input"> <span data-toggle="tooltip"
-											data-placement="top" title=""
-											data-original-title="Input your username"
-											class="input-status"
-											style="background: white; border-right: 1px solid grey;">
-												<i class="glyphicon glyphicon-user"
-												style="margin-top: 10px; color: #699EB5;"></i>
-										</span> <input id="username" type="text" data-min-length="1"
-											placeholder="Username" required>
-										</span>
-									</div>
-									<div class="row">
-										<span class="req-input input-password "> <span
-											data-toggle="tooltip" data-placement="top" title=""
-											data-original-title="Input your password"
-											class="input-status"
-											style="background: white; border-right: 1px solid grey;">
-												<i class="glyphicon glyphicon-lock"
-												style="margin-top: 10px; color: #699EB5;"></i>
-										</span> <input id="password" type="password" data-min-length="1"
-											placeholder="Password" required>
-										</span>
-									</div>
-
-									<div class="row">
-										<label class="checkbox"> <input type="checkbox"
-											value="remember-me" id="remember_me"> Remember me
-										</label>
-									</div>
-
-									<div class="row submit-row">
-										<button type="submit" id="submit"
-											class="btn btn-block submit-form invalid">Login</button>
-									</div>
-									</br>
-								</div>
-
-							</div>
-						</form>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- Contains footer images -->
-
-		<div class="container-fluid bg-3 text-center" id="footer-login"
-			style="height: 25%">
-
-			<div class="row">
-
-
-				<div class="col-sm-3">
-
-					<img class="grow" src="resources/images/login/perimeter.png"
-						class="img-responsive"
-						style="width: 20%; display: block; margin-left: auto; margin-right: auto"
-						alt="Image">
-					<h4>Perimeter Security</h4>
-					<p id="loginp">Intrusion Detection System.</p>
-				</div>
-
-
-				<div class="col-sm-3">
-
-					<img class="grow" src="resources/images/login/reports.png"
-						class="img-responsive"
-						style="width: 20%; display: block; margin-left: auto; margin-right: auto"
-						alt="Image">
-					<h4>Trend View Analysis</h4>
-					<p id="loginp">Archive all intrusion events for playback.</p>
-				</div>
-				<div class="col-sm-3">
-
-					<img class="grow" src="resources/images/login/gear.png"
-						class="img-responsive"
-						style="width: 20%; display: block; margin-left: auto; margin-right: auto"
-						alt="Image">
-					<h4>
-						<!--  Intrinsic Camera & Radar Management-->
-						Sensor Management
-					</h4>
-					<p id="loginp">
-						<!-- Automatic slew to cue camera tracking. -->
-						Configure and Monitor nodes on your UI.
-					</p>
-				</div>
-				<div class="col-sm-3">
-
-					<img class="grow" src="resources/images/login/maps.svg"
-						class="img-responsive"
-						style="width: 20%; display: block; margin-left: auto; margin-right: auto"
-						alt="Image">
-					<h4>Customizable Maps</h4>
-					<p id="loginp">Layered, Online/Offline & Vector Maps.</p>
-				</div>
-
-
-			</div>
-		</div>
-	</div>
+<br>
+<form action="/rest/handler/addData" method="post">
+  Name:<br>
+  <input type="text" id='nameid' name="name" value="">
+  <br>
+  Age:<br>
+  <input type="text" id='ageid' name="age" value="">
+  <br>
+   User Id:<br>
+  <input type="text" id='userid' name="userid" value="">
+  <br><br>
+  <input type="submit" value="Submit" onClick="submitForm()"></input>
+</form> 
 </body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 
-<script> 
-if (typeof module === 'object') {
-     window.module = module;
-     module = undefined;
+function getData()
+{
+	alert("get Data");
+	$.ajax({
+        type: "GET",
+        url: '/rest/handler/getAllData',
+        success: function(data){
+            alert(data);
+        }
+    });
 }
+
+function submitForm()
+{
+	var name = document.getElementById("nameid");
+	var age = document.getElementById("ageid");
+	var userid = document.getElementById("userid");
+	
+	console.log(name);
+	console.log(age);
+	console.log(userid);
+}
+
 </script>
-<script src="resources/thirdParty/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="resources/uiConfig.js"></script>
-
-<script type="text/javascript">
-
-
-function isElectron() {
-
-	var userAgent = navigator.userAgent.toLowerCase();
-	if (userAgent.indexOf(' electron/') > -1) {
- 		return true;
-	}
-	return false;
-}
-
-$(function() {
-	 
-	  if (localStorage.chkbx && localStorage.chkbx != '') {
-          $('#remember_me').attr('checked', 'checked');
-          $('#username').val(localStorage.usrname);
-          $('#password').val(localStorage.pass);
-      } else {
-          $('#remember_me').removeAttr('checked');
-        //  $('#username').val('');
-        //  $('#password').val('');
-      }
-
-      $('#remember_me').click(function() {
-
-          if ($('#remember_me').is(':checked')) {
-              // save username and password
-              localStorage.usrname = $('#username').val();
-              localStorage.pass = $('#password').val();
-              localStorage.chkbx = $('#remember_me').val();
-          } else {
-              localStorage.usrname = '';
-              localStorage.pass = '';
-              localStorage.chkbx = '';
-          }
-      });
-	
-});
-
-
-	$('#form').submit(function(e) {
-		e.preventDefault();
-	});
-
-function onLoginPageLoad() {
-		
-	var s = getCookie("sessionID");
-    var u = getCookie("username");
-  
-    
-    if (s != "" && u != "" && s != null && u != null) {
-          
-	
-	if(isElectron()){
-		const { ipcRenderer } = require('electron');
-	    ipcRenderer.send('sendToIndexPage', '');
-	}
-	else{
-		window.location = "indexPage.html";		
-	}
-	
-}
-else{
-
-			navigator.geolocation.getCurrentPosition(function(position) {
-				//alert("hii");
-				console.log("Found your location \nLat : "
-						+ position.coords.latitude + " \nLang :"
-						+ position.coords.longitude);
-				var location = {
-					"lat" : position.coords.latitude,
-					"lng" : position.coords.longitude
-				};
-				setCookie('location', location);
-			}, function(error) {
-				//alert("OKk");
-				switch (error.code) {
-				case error.PERMISSION_DENIED:
-					// alert("Permission denied by user.");
-					console.log("Permission denied by user.");
-					break;
-				case error.POSITION_UNAVAILABLE:
-					// alert("Location position unavailable.");
-					console.log("Location position unavailable.");
-					break;
-				case error.TIMEOUT:
-					// alert("Request timeout.");
-					console.log("Request timeout.");
-					break;
-				case error.UNKNOWN_ERROR:
-					//alert("Unknown error.");
-					console.log("Unknown error.");
-					break;
-				}
-			});
-		}
-
-	}
-	window.onload = onLoginPageLoad;
-
-	//alert(mccs_ip);
-	var authenticationUrl = 'http://' + mccs_ip + ':' + '8080'
-			+ '/C2-Web/login';
-
-	/* ======================= SHIRO BASED CALLS ==========================*/
-
-	function ips_(ajax_data, json_url, json_type) {
-
-		var return_val;
-		getJSONDataFromServershiro(JSON.stringify(ajax_data), json_url,
-				json_type, function(result) {
-					console.log(result);
-
-					result = isFailureResponse_(result);
-					return_val = result;
-				});
-		return return_val;
-	}
-
-	function getJSONDataFromServershiro(params, json_url, json_type, callback) {
-		console.log(params);
-		console.log("url=" + json_url);
-		params = JSON.parse(params);
-		$.ajax({
-			url : json_url,
-			type : json_type,
-			data : params,
-			async : false,
-			success : function(result) {
-				callback(result);
-			},
-			error : function(error) {
-				console.log(error);
-
-				sessionHandling(error);
-				callback(error);
-			}
-		});
-	}
-
-	function sessionHandling(error) {
-		console.log(error);
-		if (error.status == 504) {
-			var url = window.location.href;
-			var reload = url.substr(0, url.indexOf("/main/"));
-
-			setTimeout(function() {
-				window.location.href = reload;
-			}, 3000);
-
-		}
-
-		if (error.status == 401) {
-			console.log("Printing error status");
-			console.log(error.status);
-		}
-	}
-
-	function isFailureResponse_(result) {
-		//console.log(result);
-		if (result.length == -1) {
-			//  console.log(result);
-			return result;
-		} else {
-			//   console.log(result);
-			return result;
-		}
-	}
-
-	function setCookie(name, value/*, expires, path, domain, secure*/){
-
-	    if (typeof (Storage) !== "undefined") {
-	        // Store
-	        localStorage.setItem(name, value);
-	        
-	    }
-
-
-
-	/*
-	    var cookieStr = name + "=" + escape(value) + ((expires == null) ? "" : ";expires=" + expires.toGMTString());
-
-		
-		if(expires){
-			//expires = setExpiration(expires);
-			//cookieStr += "expires=" + expires + "; ";
-		}
-		if(path){
-			cookieStr += "path=" + path + "; ";
-		}
-		if(domain){
-			cookieStr += "domain=" + domain + "; ";
-		}
-		if(secure){
-			cookieStr += "secure; ";
-		}
-		
-		document.cookie = cookieStr;
-	*/
-
-
-	}
-
-	function getCookie(cname){
-
-		/*var newSessionID="";
-		var name = cname + "=";
-		var decodedCookie = decodeURIComponent(document.cookie);
-		var ca = decodedCookie.split(';');
-		for(var i = 0; i <ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0) == ' ') {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return c.substring(name.length, c.length);
-			}
-		}
-		return "";
-	    */
-
-	    return localStorage.getItem(cname);
-	}
-
-	function processAjaxData(response, urlPath) {
-		document.getElementById("content").innerHTML = response.html;
-		document.title = response.pageTitle;
-		window.history.pushState({
-			"html" : response.html,
-			"pageTitle" : response.pageTitle
-		}, "", urlPath);
-	}
-
-	/*=================================end of shiro post calls====================*/
-
-	document.getElementById("submit").onclick = function() {
-		// This is the function which will be called
-		// whenever the submit button is pressed
-		//$(".overlay").show();
-		var username = document.getElementById("username").value;
-		var password = document.getElementById("password").value;
-
-
-		if (username == "" && password == "") {
-			//$(".overlay").hide();
-			swal("Please enter both username and password");
-		} else if (password == "") {
-			//$(".overlay").hide();
-			swal("Please enter password");
-		} else if (username == "") {
-			//$(".overlay").hide();
-			swal("Please enter username");
-		}
-
-		else {
-			var requestObject = {
-				"username" : username,
-				"password" : password
-			};
-			console.log(requestObject);
-			var serverData = ips_(requestObject, authenticationUrl, "POST");
-			console.log(serverData);
-			//var jsonFromServer = JSON.parse(serverData);
-			console.log(serverData.status);
-			if (serverData.status == "true") {
-				//$(".overlay").hide();
-				setCookie('username', username);
-				setCookie('sessionID', serverData.sessionID);
-				setCookie('loginFlag', "true");
-				var date = new Date();
-				var d = "" + date;
-				var d1 = d.split("GMT")[0];
-				//var d1 = d.replace("GMT+0530 (IST)","");
-				console.log(d1);
-				setCookie('loginTime', d1);
-				if(isElectron()){
-					const { ipcRenderer } = require('electron');
-				    ipcRenderer.send('sendToIndexPage', '');
-				}
-				else{
-					window.location = "indexPage.html";		
-				}
-			} else {
-				//$(".overlay").hide();
-				//	alert("Please enter valid username and password first");
-				swal("Please enter valid username and password first");
-			}
-		}
-
-	};
-</script>
-<script> if (window.module) module = window.module;</script>
-</html>

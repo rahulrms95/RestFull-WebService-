@@ -5,11 +5,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.common.constant.DBConfigurationFile;
+
 public class DBConnection {
 
-	static String  url = "jdbc:mysql://localhost:3306/testdb";
-	static String user = "root";
-	static String password = "Passw@rd123";
+	/**
+	 * Read Database configuration from file 
+	 * */
+	static String  url = DBConfigurationFile.DB_URL;
+	static String user = DBConfigurationFile.DB_USERNAME;
+	static String password = DBConfigurationFile.DB_PASSWORD;
 	private static Connection con = null;
 	public static Connection getConnection()
 	{
