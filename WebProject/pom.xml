@@ -51,18 +51,19 @@
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
+		<outputDirectory>target/classes</outputDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
                  <includes>
                         <include>**/*.properties</include>
                     </includes>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
-
-			</resource>
-		</resources>
+            </resource>
+        </resources>
 		
         <finalName>WebProject</finalName>
 		<plugins>

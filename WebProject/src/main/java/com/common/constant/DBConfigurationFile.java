@@ -3,7 +3,6 @@ package com.common.constant;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.Properties;
 
 public class DBConfigurationFile {
@@ -16,13 +15,12 @@ public class DBConfigurationFile {
 	
 	static
 	{
-		String dbConfigFile="/root/git/RestFull-WebService-/WebProject/src/main/resources/dbConfig.properties";
-		//String dbConfigFile="dbConfig.properties";
+		//String dbConfigFile="/root/git/RestFull-WebService-/WebProject/src/main/resources/dbConfig.properties";
+		String dbConfigFile="dbConfig.properties";
 		
 		Properties p = new Properties();
 		try {
-			Reader rd = new FileReader(dbConfigFile);
-			p.load(rd);
+			p.load(new FileReader(dbConfigFile));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -38,6 +36,10 @@ public class DBConfigurationFile {
 		
 		DB_URL = "jdbc:"+DB_TYPE+"://"+DB_IP+":"+DB_PORT+"/"+DB_NAME;
 		System.out.println(DB_URL);
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 	
 }
