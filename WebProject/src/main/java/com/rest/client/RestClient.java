@@ -33,10 +33,19 @@ public class RestClient {
 
 	public static void main(String[] args) {
 
+		String url = "http://127.0.0.1:8080/WebProject-0.0.1-SNAPSHOT/rest";
+		String path = "/handler/getAllData";
+		String methodType = "GET";
+		new RestClient().service(url, path, methodType,"");
+	}
+	
+	public Response service(String url,String path,String methodType,String data)
+	{
+
 		HttpAuthenticationFeature ff;
 		Client client = ClientBuilder.newClient();
 
-		WebTarget webTarget = client.target("http://127.0.0.1:8080/WebProject-0.0.1-SNAPSHOT/rest").path("/handler/getAllData");
+		WebTarget webTarget = client.target(url).path(path);
 
 		Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
 		Response res = invocationBuilder.get();
@@ -75,5 +84,8 @@ public class RestClient {
 		{
 			System.out.println(userList.get(i).getName());
 		}
+	
+		
+		return res;
 	}
 }
